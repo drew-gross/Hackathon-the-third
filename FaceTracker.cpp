@@ -12,7 +12,7 @@ using namespace std;
 
 int main (int argc, char * const argv[]) 
 {
-    const int scale = 2;
+    const int scale = 8;
 
     // locate haar cascade from inside application bundle
     // (this is the mac way to package application resources)
@@ -27,6 +27,7 @@ int main (int argc, char * const argv[])
     
     // create all necessary instances
     cvNamedWindow (WINDOW_NAME, CV_WINDOW_AUTOSIZE);
+	cvNamedWindow ("Greyscale", CV_WINDOW_AUTOSIZE);
     CvCapture * camera = cvCreateCameraCapture (CV_CAP_ANY);
     CvHaarClassifierCascade* cascade = (CvHaarClassifierCascade*) cvLoad (CASCADE_NAME, 0, 0, 0);
     CvMemStorage* storage = cvCreateMemStorage(0);
@@ -43,35 +44,54 @@ int main (int argc, char * const argv[])
     // get an initial frame and duplicate it for later work
     IplImage *current_frame = cvQueryFrame (camera);
     IplImage *draw_image =
-	cvCreateImage(cvSize (current_frame->width, current_frame->height), IPL_DEPTH_8U, 3);
+		cvCreateImage(cvSize (current_frame->width / scale, current_frame->height / scale), IPL_DEPTH_8U, 3);
     IplImage *gray_image =
-	cvCreateImage(cvSize (current_frame->width, current_frame->height), IPL_DEPTH_8U, 1);
+		cvCreateImage(cvSize (current_frame->width / scale, current_frame->height / scale), IPL_DEPTH_8U, 1);
+	IplImage *small_image =
+		cvCreateImage(cvSize (current_frame->width / scale, current_frame->height / scale),
+					  IPL_DEPTH_8U, 3);
 	
 	IplImage *moving_average =
-	cvCreateImage(cvSize (current_frame->width, current_frame->height), IPL_DEPTH_32F, 3);
+		cvCreateImage(cvSize (current_frame->width / scale, current_frame->height / scale), IPL_DEPTH_32F, 3);
 	IplImage *difference, *tmp;  
-    assert (current_frame && gray_image && draw_image);
+    assert (current_frame && gray_image && draw_image && small_image && moving_average);
 	
 	CvRect bndRect = cvRect(0,0,0,0);
 	CvPoint pt1, pt2;
 	bool first = true;
+	bool disabled = false;
 	int numRecs = 0;
+	int avgRecs = 0;
+	int frames = 0; int frameCountTime = time(NULL);
+	
+	printf("Current frame size: (%d, %d)\n", current_frame->width, current_frame->height);
     
     // as long as there are images ...
     while (current_frame = cvQueryFrame (camera))
     {
+		/*
+		 CVAPI(void) cvSmooth( const CvArr* src, CvArr* dst,
+		 int smoothtype CV_DEFAULT(CV_GAUSSIAN),
+		 int size1 CV_DEFAULT(3),
+		 int size2 CV_DEFAULT(0),
+		 double sigma1 CV_DEFAULT(0),
+		 double sigma2 CV_DEFAULT(0));
+		 */
+		cvResize(current_frame, small_image, CV_INTER_LINEAR);
+		//cvSmooth(current_frame, draw_image, CV_GAUSSIAN, 5, 5);
+		
 		if (first) {
-			difference = cvCloneImage(current_frame);
-			tmp = cvCloneImage(current_frame);
-			cvConvertScale(current_frame, moving_average, 1.0, 0.0);
+			difference = cvCloneImage(small_image);
+			tmp = cvCloneImage(small_image);
+			cvConvertScale(small_image, moving_average, 1.0, 0.0);
 			first = false;
 		} else {
-			cvRunningAvg(current_frame, moving_average, 0.020, NULL);
+			cvRunningAvg(small_image, moving_average, 0.080, NULL);
 		}
 		
 		cvConvertScale(moving_average, tmp, 1.0, 0.0);
 		
-		cvAbsDiff(current_frame, tmp, difference);
+		cvAbsDiff(small_image, tmp, difference);
 		
 		cvCvtColor(difference, gray_image, CV_RGB2GRAY);
 		
@@ -89,10 +109,10 @@ int main (int argc, char * const argv[])
 		for ( ; contour != 0; contour = contour->h_next ) {
 			bndRect = cvBoundingRect(contour, 0);
 			
-			pt1.x = bndRect.x;
-			pt1.y = bndRect.y;
-			pt2.x = bndRect.x + bndRect.width;
-			pt2.y = bndRect.y + bndRect.height;
+			pt1.x = bndRect.x * scale;
+			pt1.y = bndRect.y * scale;
+			pt2.x = (bndRect.x + bndRect.width) * scale;
+			pt2.y = (bndRect.y + bndRect.height) * scale;
 			
 			cvRectangle(current_frame,
 						cvPoint(0, 0),
@@ -105,18 +125,29 @@ int main (int argc, char * const argv[])
 			
 			if ((pt2.x < current_frame->width * 0.20 || pt1.x > current_frame->width * 0.80) &&
 					pt2.y < current_frame->height * 0.30) {
-				numRecs += bndRect.width * bndRect.height;
-				//cvRectangle(current_frame, pt1, pt2, CV_RGB(255, 0, 0), 1);
+				numRecs += bndRect.width * bndRect.height * scale * scale;
+				cvRectangle(current_frame, pt1, pt2, CV_RGB(255, 0, 0), 1);
 				//system("osascript -e \"tell application \\\"Microsoft Excel\\\" to activate\"");
 			}
 		}
-		if (numRecs > 2500) {
-			printf("%d\n", numRecs);
+		avgRecs = (avgRecs + numRecs) / 2.0;
+		if (avgRecs > 600 && !disabled) {
+			printf("%d, %d\n", avgRecs, numRecs);
 			system("osascript -e \"tell application \\\"Microsoft Excel\\\" to activate\"");
 			cvWaitKey (10000);
+			disabled = true;
+		} else {
+			disabled = false;
 		}
 		
-        /*// convert to gray and downsize
+		++frames;
+		
+		if (frameCountTime != time(NULL)) {
+			frameCountTime = time(NULL);
+			printf("FPS: %d\n", frames);
+		}
+		
+        /* // convert to gray and downsize
 		 cvCvtColor (current_frame, gray_image, CV_BGR2GRAY);
 		 cvResize (gray_image, small_image, CV_INTER_LINEAR);
 		 
@@ -140,11 +171,14 @@ int main (int argc, char * const argv[])
         
         // just show the image
         cvShowImage (WINDOW_NAME, current_frame);
+		//cvShowImage ("Greyscale", gray_image);
         
         // wait a tenth of a second for keypress and window drawing
-        int key = cvWaitKey (100);
-        if (key == 'q' || key == 'Q')
-            break;
+        if (!disabled) {
+			int key = cvWaitKey (100);
+			if (key == 'q' || key == 'Q')
+				break;
+		}
     }
 	cvReleaseImage(&tmp);
 	cvReleaseImage(&difference);
