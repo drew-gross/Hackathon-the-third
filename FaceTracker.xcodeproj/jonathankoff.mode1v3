@@ -300,7 +300,7 @@
 							<real>186</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>343 37 1033 660 0 0 1440 878 </string>
+						<string>342 36 1033 660 0 0 1440 878 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -330,7 +330,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>F6F2F67B14CA6AF9001EEF5E</string>
+										<string>F6F2F68A14CA6BC6001EEF5E</string>
 										<key>history</key>
 										<array>
 											<string>F6F2F54614CA5264001EEF5E</string>
@@ -354,7 +354,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {825, 614}}</string>
 								<key>RubberWindowFrame</key>
-								<string>343 37 1033 660 0 0 1440 878 </string>
+								<string>342 36 1033 660 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -374,7 +374,7 @@
 								<key>Frame</key>
 								<string>{{0, 619}, {825, 0}}</string>
 								<key>RubberWindowFrame</key>
-								<string>343 37 1033 660 0 0 1440 878 </string>
+								<string>342 36 1033 660 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
@@ -547,7 +547,7 @@
 		<string>/Users/jonathankoff/Development/Misc/opencv thing/FaceTracker/FaceTracker.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>343 37 1033 660 0 0 1440 878 </string>
+	<string>342 36 1033 660 0 0 1440 878 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>

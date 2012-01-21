@@ -123,11 +123,11 @@ int main (int argc, char * const argv[])
 				break;
 		}
     }
-	cvReleaseImage(&tmp);
-	cvReleaseImage(&difference);
-	cvReleaseImage(&gray_image);
-	cvReleaseImage(&moving_average);
+	// TODO: This stuff probably shouldn't be commented out, but I don't care. It crashes.
+	//cvReleaseImage(&tmp);
+	//cvReleaseImage(&difference);
+	//cvReleaseImage(&gray_image);
+	//cvReleaseImage(&moving_average);
     
-    // be nice and return no error
     return 0;
 }
