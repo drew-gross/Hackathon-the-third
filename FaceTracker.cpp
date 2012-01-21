@@ -46,13 +46,7 @@ int main (int argc, char * const argv[])
 	cvCreateImage(cvSize (current_frame->width, current_frame->height), IPL_DEPTH_8U, 3);
     IplImage *gray_image =
 	cvCreateImage(cvSize (current_frame->width, current_frame->height), IPL_DEPTH_8U, 1);
-    IplImage *small_image	=
-	cvCreateImage(cvSize (current_frame->width / scale,
-						  current_frame->height / scale),
-				  IPL_DEPTH_8U, 1);
 	
-	IplImage *motion_history =
-	cvCreateImage(cvSize (current_frame->width, current_frame->height), IPL_DEPTH_8U, 3);
 	IplImage *moving_average =
 	cvCreateImage(cvSize (current_frame->width, current_frame->height), IPL_DEPTH_32F, 3);
 	IplImage *difference, *tmp;  
@@ -60,11 +54,8 @@ int main (int argc, char * const argv[])
 	
 	CvRect bndRect = cvRect(0,0,0,0);
 	CvPoint pt1, pt2;
-	int avgX, prevX;
 	bool first = true;
-	int closestToLeft = 0;
-	int closestToRight = 320;
-	int numPeople = 0;
+	int numRecs = 0;
     
     // as long as there are images ...
     while (current_frame = cvQueryFrame (camera))
@@ -94,6 +85,7 @@ int main (int argc, char * const argv[])
 		cvFindContours(gray_image, storage, &contour, sizeof(CvContour),
 					   CV_RETR_CCOMP, CV_CHAIN_APPROX_SIMPLE);
 		
+		numRecs = 0;
 		for ( ; contour != 0; contour = contour->h_next ) {
 			bndRect = cvBoundingRect(contour, 0);
 			
@@ -104,17 +96,24 @@ int main (int argc, char * const argv[])
 			
 			cvRectangle(current_frame,
 						cvPoint(0, 0),
-						cvPoint(current_frame->width * 0.20, current_frame->height * 0.20),
+						cvPoint(current_frame->width * 0.20, current_frame->height * 0.30),
 						CV_RGB(0, 255, 0), 1);
 			cvRectangle(current_frame,
 						cvPoint(current_frame->width * 0.80, 0),
-						cvPoint(current_frame->width, current_frame->height * 0.20),
+						cvPoint(current_frame->width, current_frame->height * 0.30),
 						CV_RGB(0, 255, 0), 1);
 			
 			if ((pt2.x < current_frame->width * 0.20 || pt1.x > current_frame->width * 0.80) &&
-				pt2.y < current_frame->height * 0.20) {
-				cvRectangle(current_frame, pt1, pt2, CV_RGB(255, 0, 0), 1);
+					pt2.y < current_frame->height * 0.30) {
+				numRecs += bndRect.width * bndRect.height;
+				//cvRectangle(current_frame, pt1, pt2, CV_RGB(255, 0, 0), 1);
+				//system("osascript -e \"tell application \\\"Microsoft Excel\\\" to activate\"");
 			}
+		}
+		if (numRecs > 2500) {
+			printf("%d\n", numRecs);
+			system("osascript -e \"tell application \\\"Microsoft Excel\\\" to activate\"");
+			cvWaitKey (10000);
 		}
 		
         /*// convert to gray and downsize

@@ -4,6 +4,9 @@
 		activeBuildConfigurationName = Debug;
 		activeExecutable = F6F2F44214CA38D9001EEF5E /* FaceTracker */;
 		activeTarget = 4D7DBE560C04A8FF00D8835D /* FaceTracker */;
+		addToTargets = (
+			4D7DBE560C04A8FF00D8835D /* FaceTracker */,
+		);
 		codeSenseManager = F6F2F44B14CA3904001EEF5E /* Code sense */;
 		executables = (
 			F6F2F44214CA38D9001EEF5E /* FaceTracker */,
@@ -14,9 +17,9 @@
 				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
-					341,
+					586,
 					20,
-					48.16259765625,
+					48,
 					43,
 					43,
 					20,
@@ -76,6 +79,19 @@
 			F6F2F4B114CA4024001EEF5E /* PBXTextBookmark */ = F6F2F4B114CA4024001EEF5E /* PBXTextBookmark */;
 			F6F2F4B514CA4042001EEF5E /* PBXTextBookmark */ = F6F2F4B514CA4042001EEF5E /* PBXTextBookmark */;
 			F6F2F4B914CA4050001EEF5E /* PBXTextBookmark */ = F6F2F4B914CA4050001EEF5E /* PBXTextBookmark */;
+			F6F2F4C114CA464D001EEF5E /* PBXTextBookmark */ = F6F2F4C114CA464D001EEF5E /* PBXTextBookmark */;
+			F6F2F4C414CA4699001EEF5E /* PBXTextBookmark */ = F6F2F4C414CA4699001EEF5E /* PBXTextBookmark */;
+			F6F2F4C814CA46D2001EEF5E /* PBXTextBookmark */ = F6F2F4C814CA46D2001EEF5E /* PBXTextBookmark */;
+			F6F2F4D414CA47E7001EEF5E /* PBXTextBookmark */ = F6F2F4D414CA47E7001EEF5E /* PBXTextBookmark */;
+			F6F2F4D814CA481E001EEF5E /* PBXTextBookmark */ = F6F2F4D814CA481E001EEF5E /* PBXTextBookmark */;
+			F6F2F4DC14CA4835001EEF5E /* PBXTextBookmark */ = F6F2F4DC14CA4835001EEF5E /* PBXTextBookmark */;
+			F6F2F4E014CA4852001EEF5E /* PBXTextBookmark */ = F6F2F4E014CA4852001EEF5E /* PBXTextBookmark */;
+			F6F2F4E414CA48B1001EEF5E /* PBXTextBookmark */ = F6F2F4E414CA48B1001EEF5E /* PBXTextBookmark */;
+			F6F2F4E814CA48D9001EEF5E /* PBXTextBookmark */ = F6F2F4E814CA48D9001EEF5E /* PBXTextBookmark */;
+			F6F2F4EC14CA48E9001EEF5E /* PBXTextBookmark */ = F6F2F4EC14CA48E9001EEF5E /* PBXTextBookmark */;
+			F6F2F4F014CA490E001EEF5E /* PBXTextBookmark */ = F6F2F4F014CA490E001EEF5E /* PBXTextBookmark */;
+			F6F2F4F814CA4A48001EEF5E /* PBXTextBookmark */ = F6F2F4F814CA4A48001EEF5E /* PBXTextBookmark */;
+			F6F2F4FE14CA4B34001EEF5E /* PBXTextBookmark */ = F6F2F4FE14CA4B34001EEF5E /* PBXTextBookmark */;
 		};
 		sourceControlManager = F6F2F44A14CA3904001EEF5E /* Source Control */;
 		userBuildSettings = {
@@ -83,9 +99,9 @@
 	};
 	08FB7796FE84155DC02AAC07 /* FaceTracker.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {764, 1924}}";
-			sepNavSelRange = "{2946, 0}";
-			sepNavVisRange = "{2596, 885}";
+			sepNavIntBoundsRect = "{{0, 0}, {764, 1950}}";
+			sepNavSelRange = "{3855, 0}";
+			sepNavVisRange = "{3161, 1125}";
 		};
 	};
 	4D7DBE560C04A8FF00D8835D /* FaceTracker */ = {
@@ -144,7 +160,7 @@
 		fRef = 08FB7796FE84155DC02AAC07 /* FaceTracker.cpp */;
 		fallbackIsa = XCBuildMessageTextBookmark;
 		rLen = 0;
-		rLoc = 114;
+		rLoc = 107;
 		rType = 1;
 	};
 	F6F2F47214CA3B8A001EEF5E /* PBXTextBookmark */ = {
@@ -152,7 +168,7 @@
 		fRef = 08FB7796FE84155DC02AAC07 /* FaceTracker.cpp */;
 		name = "FaceTracker.cpp: 61";
 		rLen = 0;
-		rLoc = 2269;
+		rLoc = 2009;
 		rType = 0;
 		vrLen = 367;
 		vrLoc = 2146;
@@ -163,7 +179,7 @@
 		fRef = 08FB7796FE84155DC02AAC07 /* FaceTracker.cpp */;
 		fallbackIsa = XCBuildMessageTextBookmark;
 		rLen = 1;
-		rLoc = 73;
+		rLoc = 64;
 		rType = 1;
 	};
 	F6F2F47614CA3B9D001EEF5E /* PBXTextBookmark */ = {
@@ -171,7 +187,7 @@
 		fRef = 08FB7796FE84155DC02AAC07 /* FaceTracker.cpp */;
 		name = "FaceTracker.cpp: 154";
 		rLen = 0;
-		rLoc = 4880;
+		rLoc = 4863;
 		rType = 0;
 		vrLen = 1040;
 		vrLoc = 4399;
@@ -181,7 +197,7 @@
 		fRef = 08FB7796FE84155DC02AAC07 /* FaceTracker.cpp */;
 		name = "FaceTracker.cpp: 127";
 		rLen = 0;
-		rLoc = 4011;
+		rLoc = 3832;
 		rType = 0;
 		vrLen = 914;
 		vrLoc = 2853;
@@ -191,7 +207,7 @@
 		fRef = 08FB7796FE84155DC02AAC07 /* FaceTracker.cpp */;
 		name = "FaceTracker.cpp: 105";
 		rLen = 0;
-		rLoc = 3476;
+		rLoc = 3160;
 		rType = 0;
 		vrLen = 796;
 		vrLoc = 3253;
@@ -201,7 +217,7 @@
 		fRef = 08FB7796FE84155DC02AAC07 /* FaceTracker.cpp */;
 		name = "FaceTracker.cpp: 103";
 		rLen = 0;
-		rLoc = 3476;
+		rLoc = 3160;
 		rType = 0;
 		vrLen = 902;
 		vrLoc = 3202;
@@ -211,7 +227,7 @@
 		fRef = 08FB7796FE84155DC02AAC07 /* FaceTracker.cpp */;
 		name = "FaceTracker.cpp: 111";
 		rLen = 0;
-		rLoc = 3726;
+		rLoc = 3410;
 		rType = 0;
 		vrLen = 1036;
 		vrLoc = 3019;
@@ -221,7 +237,7 @@
 		fRef = 08FB7796FE84155DC02AAC07 /* FaceTracker.cpp */;
 		name = "FaceTracker.cpp: 114";
 		rLen = 0;
-		rLoc = 3893;
+		rLoc = 3577;
 		rType = 0;
 		vrLen = 996;
 		vrLoc = 3019;
@@ -231,7 +247,7 @@
 		fRef = 08FB7796FE84155DC02AAC07 /* FaceTracker.cpp */;
 		name = "FaceTracker.cpp: 87";
 		rLen = 0;
-		rLoc = 2946;
+		rLoc = 2615;
 		rType = 0;
 		vrLen = 910;
 		vrLoc = 2442;
@@ -241,7 +257,7 @@
 		fRef = 08FB7796FE84155DC02AAC07 /* FaceTracker.cpp */;
 		name = "FaceTracker.cpp: 87";
 		rLen = 0;
-		rLoc = 2946;
+		rLoc = 2615;
 		rType = 0;
 		vrLen = 911;
 		vrLoc = 2442;
@@ -251,7 +267,7 @@
 		fRef = 08FB7796FE84155DC02AAC07 /* FaceTracker.cpp */;
 		name = "FaceTracker.cpp: 87";
 		rLen = 1;
-		rLoc = 2945;
+		rLoc = 2614;
 		rType = 0;
 		vrLen = 898;
 		vrLoc = 2498;
@@ -261,7 +277,7 @@
 		fRef = 08FB7796FE84155DC02AAC07 /* FaceTracker.cpp */;
 		name = "FaceTracker.cpp: 143";
 		rLen = 0;
-		rLoc = 4865;
+		rLoc = 4848;
 		rType = 0;
 		vrLen = 919;
 		vrLoc = 4320;
@@ -271,7 +287,7 @@
 		fRef = 08FB7796FE84155DC02AAC07 /* FaceTracker.cpp */;
 		name = "FaceTracker.cpp: 90";
 		rLen = 0;
-		rLoc = 3025;
+		rLoc = 2694;
 		rType = 0;
 		vrLen = 853;
 		vrLoc = 2656;
@@ -281,7 +297,7 @@
 		fRef = 08FB7796FE84155DC02AAC07 /* FaceTracker.cpp */;
 		name = "FaceTracker.cpp: 89";
 		rLen = 0;
-		rLoc = 2980;
+		rLoc = 2649;
 		rType = 0;
 		vrLen = 855;
 		vrLoc = 2656;
@@ -291,7 +307,7 @@
 		fRef = 08FB7796FE84155DC02AAC07 /* FaceTracker.cpp */;
 		name = "FaceTracker.cpp: 87";
 		rLen = 0;
-		rLoc = 2946;
+		rLoc = 2615;
 		rType = 0;
 		vrLen = 855;
 		vrLoc = 2656;
@@ -301,7 +317,7 @@
 		fRef = 08FB7796FE84155DC02AAC07 /* FaceTracker.cpp */;
 		name = "FaceTracker.cpp: 142";
 		rLen = 0;
-		rLoc = 4830;
+		rLoc = 4813;
 		rType = 0;
 		vrLen = 966;
 		vrLoc = 4173;
@@ -311,7 +327,7 @@
 		fRef = 08FB7796FE84155DC02AAC07 /* FaceTracker.cpp */;
 		name = "FaceTracker.cpp: 87";
 		rLen = 0;
-		rLoc = 2946;
+		rLoc = 2615;
 		rType = 0;
 		vrLen = 885;
 		vrLoc = 2596;
@@ -321,9 +337,139 @@
 		fRef = 08FB7796FE84155DC02AAC07 /* FaceTracker.cpp */;
 		name = "FaceTracker.cpp: 87";
 		rLen = 0;
-		rLoc = 2946;
+		rLoc = 2615;
 		rType = 0;
 		vrLen = 885;
 		vrLoc = 2596;
+	};
+	F6F2F4C114CA464D001EEF5E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 08FB7796FE84155DC02AAC07 /* FaceTracker.cpp */;
+		name = "FaceTracker.cpp: 117";
+		rLen = 0;
+		rLoc = 3749;
+		rType = 0;
+		vrLen = 1086;
+		vrLoc = 2976;
+	};
+	F6F2F4C414CA4699001EEF5E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 08FB7796FE84155DC02AAC07 /* FaceTracker.cpp */;
+		name = "FaceTracker.cpp: 117";
+		rLen = 0;
+		rLoc = 3753;
+		rType = 0;
+		vrLen = 1080;
+		vrLoc = 2976;
+	};
+	F6F2F4C814CA46D2001EEF5E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 08FB7796FE84155DC02AAC07 /* FaceTracker.cpp */;
+		name = "FaceTracker.cpp: 147";
+		rLen = 0;
+		rLoc = 4949;
+		rType = 0;
+		vrLen = 953;
+		vrLoc = 4310;
+	};
+	F6F2F4D414CA47E7001EEF5E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 08FB7796FE84155DC02AAC07 /* FaceTracker.cpp */;
+		name = "FaceTracker.cpp: 113";
+		rLen = 0;
+		rLoc = 3998;
+		rType = 0;
+		vrLen = 992;
+		vrLoc = 2875;
+	};
+	F6F2F4D814CA481E001EEF5E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 08FB7796FE84155DC02AAC07 /* FaceTracker.cpp */;
+		name = "FaceTracker.cpp: 108";
+		rLen = 0;
+		rLoc = 3673;
+		rType = 0;
+		vrLen = 1025;
+		vrLoc = 2875;
+	};
+	F6F2F4DC14CA4835001EEF5E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 08FB7796FE84155DC02AAC07 /* FaceTracker.cpp */;
+		name = "FaceTracker.cpp: 143";
+		rLen = 0;
+		rLoc = 5022;
+		rType = 0;
+		vrLen = 992;
+		vrLoc = 3956;
+	};
+	F6F2F4E014CA4852001EEF5E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 08FB7796FE84155DC02AAC07 /* FaceTracker.cpp */;
+		name = "FaceTracker.cpp: 109";
+		rLen = 0;
+		rLoc = 3681;
+		rType = 0;
+		vrLen = 1067;
+		vrLoc = 3036;
+	};
+	F6F2F4E414CA48B1001EEF5E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 08FB7796FE84155DC02AAC07 /* FaceTracker.cpp */;
+		name = "FaceTracker.cpp: 113";
+		rLen = 0;
+		rLoc = 3886;
+		rType = 0;
+		vrLen = 1124;
+		vrLoc = 3165;
+	};
+	F6F2F4E814CA48D9001EEF5E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 08FB7796FE84155DC02AAC07 /* FaceTracker.cpp */;
+		name = "FaceTracker.cpp: 145";
+		rLen = 0;
+		rLoc = 5032;
+		rType = 0;
+		vrLen = 970;
+		vrLoc = 4048;
+	};
+	F6F2F4EC14CA48E9001EEF5E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 08FB7796FE84155DC02AAC07 /* FaceTracker.cpp */;
+		name = "FaceTracker.cpp: 140";
+		rLen = 0;
+		rLoc = 4863;
+		rType = 0;
+		vrLen = 970;
+		vrLoc = 4048;
+	};
+	F6F2F4F014CA490E001EEF5E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 08FB7796FE84155DC02AAC07 /* FaceTracker.cpp */;
+		name = "FaceTracker.cpp: 109";
+		rLen = 0;
+		rLoc = 3681;
+		rType = 0;
+		vrLen = 1124;
+		vrLoc = 3165;
+	};
+	F6F2F4F814CA4A48001EEF5E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 08FB7796FE84155DC02AAC07 /* FaceTracker.cpp */;
+		name = "FaceTracker.cpp: 116";
+		rLen = 0;
+		rLoc = 3994;
+		rType = 0;
+		vrLen = 1082;
+		vrLoc = 3349;
+	};
+	F6F2F4FE14CA4B34001EEF5E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 08FB7796FE84155DC02AAC07 /* FaceTracker.cpp */;
+		name = "FaceTracker.cpp: 113";
+		rLen = 0;
+		rLoc = 3855;
+		rType = 0;
+		vrLen = 1125;
+		vrLoc = 3161;
 	};
 }

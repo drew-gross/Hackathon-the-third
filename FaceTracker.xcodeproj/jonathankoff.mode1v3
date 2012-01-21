@@ -273,8 +273,8 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>11</integer>
-									<integer>10</integer>
+									<integer>4</integer>
+									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
@@ -327,7 +327,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>F6F2F4B914CA4050001EEF5E</string>
+										<string>F6F2F4FE14CA4B34001EEF5E</string>
 										<key>history</key>
 										<array>
 											<string>F6F2F47514CA3B9D001EEF5E</string>
@@ -528,7 +528,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>F6F2F4BA14CA4050001EEF5E</string>
+		<string>F6F2F4FF14CA4B34001EEF5E</string>
 		<string>F6F2F47B14CA3B9D001EEF5E</string>
 		<string>F6F2F47C14CA3B9D001EEF5E</string>
 		<string>1CD10A99069EF8BA00B06720</string>
@@ -567,7 +567,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {500, 218}}</string>
 								<key>RubberWindowFrame</key>
-								<string>202 131 500 500 0 0 1440 878 </string>
+								<string>128 131 500 500 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -593,7 +593,7 @@
 								<key>Frame</key>
 								<string>{{0, 223}, {500, 236}}</string>
 								<key>RubberWindowFrame</key>
-								<string>202 131 500 500 0 0 1440 878 </string>
+								<string>128 131 500 500 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXBuildResultsModule</string>
@@ -625,7 +625,7 @@
 			<key>WindowContentMinSize</key>
 			<string>486 300</string>
 			<key>WindowString</key>
-			<string>202 131 500 500 0 0 1440 878 </string>
+			<string>128 131 500 500 0 0 1440 878 </string>
 			<key>WindowToolGUID</key>
 			<string>F6F2F44E14CA392D001EEF5E</string>
 			<key>WindowToolIsVisible</key>
