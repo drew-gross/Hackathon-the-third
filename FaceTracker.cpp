@@ -4,18 +4,22 @@
 #include <iostream>
 
 
-const char  * WINDOW_NAME  = "Face Tracker";
-const CFIndex CASCADE_NAME_LEN = 2048;
-      char    CASCADE_NAME[CASCADE_NAME_LEN] = "haarcascade_frontalface_alt2.xml"; // this is a dummy
+const char  * WINDOW_NAME  = "";
 
 using namespace std;
 
 int main (int argc, char * const argv[]) 
 {
     const int scale = 8;
+	const char *introMessage1 = "Make sure Microsoft Excel is open with a";
+	const char *introMessage2 = "fullscreen, realistic-looking document visible.";
+	const char *introMessage3 = "Then, feel free to hide or minimize this app.";
 
     CFBundleRef mainBundle  = CFBundleGetMainBundle ();
     assert (mainBundle);
+	
+	CvFont font;
+	cvInitFont(&font, CV_FONT_VECTOR0, 0.6, 1.0, 0.0, 2);
     
     cvNamedWindow (WINDOW_NAME, CV_WINDOW_AUTOSIZE);
     CvCapture * camera = cvCreateCameraCapture (CV_CAP_ANY);
@@ -84,15 +88,15 @@ int main (int argc, char * const argv[])
 			
 			cvRectangle(current_frame,
 						cvPoint(0, 0),
-						cvPoint(current_frame->width * 0.20, current_frame->height * 0.40),
+						cvPoint(current_frame->width * 0.20, current_frame->height * 0.50),
 						CV_RGB(0, 255, 0), 1);
 			cvRectangle(current_frame,
 						cvPoint(current_frame->width * 0.80, 0),
-						cvPoint(current_frame->width, current_frame->height * 0.40),
+						cvPoint(current_frame->width, current_frame->height * 0.50),
 						CV_RGB(0, 255, 0), 1);
 			
 			if ((pt2.x < current_frame->width * 0.20 || pt1.x > current_frame->width * 0.80) &&
-					pt2.y < current_frame->height * 0.40) {
+					pt2.y < current_frame->height * 0.50) {
 				numRecs += bndRect.width * bndRect.height * scale * scale;
 				cvRectangle(current_frame, pt1, pt2, CV_RGB(255, 0, 0), 1);
 			}
@@ -105,7 +109,7 @@ int main (int argc, char * const argv[])
 			settlingframes = MAXSETTLINGFRAMES;
 		}
 		
-		if (settlingframes < -100) settlingframes = 0;  // TODO: This is hackish, but I don't care right now.
+		if (settlingframes < 0) settlingframes = 0;
 		
 		++frames;
 		
@@ -115,7 +119,25 @@ int main (int argc, char * const argv[])
 			frames = 0;
 		}
         
-        cvShowImage (WINDOW_NAME, current_frame);
+		int textBaseline;
+		CvSize textSize;
+		
+		cvGetTextSize(introMessage1, &font, &textSize, &textBaseline);
+		cvPutText(current_frame, introMessage1,
+				  cvPoint((current_frame->width - textSize.width) / 2, current_frame->height / 2 + 30),
+				  &font, cvScalar(255, 255, 255, 1.0));
+		
+		cvGetTextSize(introMessage2, &font, &textSize, &textBaseline);
+		cvPutText(current_frame, introMessage2,
+				  cvPoint((current_frame->width - textSize.width) / 2, current_frame->height / 2 + 60),
+				  &font, cvScalar(255, 255, 255, 1.0));
+		
+		cvGetTextSize(introMessage3, &font, &textSize, &textBaseline);
+		cvPutText(current_frame, introMessage3,
+				  cvPoint((current_frame->width - textSize.width) / 2, current_frame->height / 2 + 90),
+				  &font, cvScalar(255, 255, 255, 1.0));
+		
+        cvShowImage(WINDOW_NAME, current_frame);
         
         if (settlingframes <= 0) {
 			int key = cvWaitKey (100);

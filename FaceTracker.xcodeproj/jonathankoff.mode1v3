@@ -300,7 +300,7 @@
 							<real>186</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>342 36 1033 660 0 0 1440 878 </string>
+						<string>54 153 1033 660 0 0 1440 878 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -330,7 +330,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>F6F2F68A14CA6BC6001EEF5E</string>
+										<string>F6F2F70A14CA75CA001EEF5E</string>
 										<key>history</key>
 										<array>
 											<string>F6F2F54614CA5264001EEF5E</string>
@@ -340,7 +340,8 @@
 											<string>F6F2F54C14CA5264001EEF5E</string>
 											<string>F6F2F54E14CA5264001EEF5E</string>
 											<string>F6F2F55014CA5264001EEF5E</string>
-											<string>F6F2F61814CA5E99001EEF5E</string>
+											<string>F6F2F6E214CA7483001EEF5E</string>
+											<string>F6F2F6E314CA7483001EEF5E</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -354,7 +355,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {825, 614}}</string>
 								<key>RubberWindowFrame</key>
-								<string>342 36 1033 660 0 0 1440 878 </string>
+								<string>54 153 1033 660 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -374,7 +375,7 @@
 								<key>Frame</key>
 								<string>{{0, 619}, {825, 0}}</string>
 								<key>RubberWindowFrame</key>
-								<string>342 36 1033 660 0 0 1440 878 </string>
+								<string>54 153 1033 660 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
@@ -538,6 +539,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>F6F2F70B14CA75CA001EEF5E</string>
 		<string>1C530D57069F1CE1000CFCEE</string>
 		<string>F6F2F47B14CA3B9D001EEF5E</string>
 		<string>F6F2F47C14CA3B9D001EEF5E</string>
@@ -547,7 +549,7 @@
 		<string>/Users/jonathankoff/Development/Misc/opencv thing/FaceTracker/FaceTracker.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>342 36 1033 660 0 0 1440 878 </string>
+	<string>54 153 1033 660 0 0 1440 878 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
@@ -568,7 +570,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>FaceTracker.cpp</string>
+								<string>cxcore.h</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -585,8 +587,6 @@
 							<string>218pt</string>
 						</dict>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -639,7 +639,7 @@
 			<key>WindowToolGUID</key>
 			<string>F6F2F44E14CA392D001EEF5E</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>
